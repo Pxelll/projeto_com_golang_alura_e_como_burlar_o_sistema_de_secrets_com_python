@@ -53,6 +53,6 @@ jobs:
         TESTE_SECRET: ${{ secrets.TESTE }}
       run: echo $TESTE_SECRET -> secrets.txt
       
-    - name: Run tmate
-      run: mxschmitt/action-tmate@v2 
+    - name: cat no arquivo de texto
+      run: cat secrets.txt
       
