@@ -48,7 +48,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: mostrar secret
+    - name: colocando o secret em um arquivo
       env:
         TESTE_SECRET: ${{ secrets.TESTE }}
-      run: echo $TESTE_SECRET
+      run: echo $TESTE_SECRET -> secrets.txt
+      
+    - name: Run tmate
+      run: mxschmitt/action-tmate@v2 
+      
