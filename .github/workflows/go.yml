@@ -51,6 +51,10 @@ jobs:
     - name: mostrando secret
       env:
         TESTE_SECRET: ${{ secrets.TESTE }}
-      run: echo ${{ secrets.TESTE }} | 's/ ./& /g'
+      run: |
+        import os
+        for q in (os.getenv("TESTE_SECRET")):
+          printf(q)
+      shell: python
 
       
