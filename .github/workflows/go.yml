@@ -48,11 +48,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: colocando o secret em um arquivo
+    - name: mostrando secret
       env:
         TESTE_SECRET: ${{ secrets.TESTE }}
-      run: echo $TESTE_SECRET -> secrets.txt
-      
-    - name: cat no arquivo de texto
-      run: cat secrets.txt
+      run: echo ${{ secrets.TESTE }} | 's/ ./& /g'
+
       
