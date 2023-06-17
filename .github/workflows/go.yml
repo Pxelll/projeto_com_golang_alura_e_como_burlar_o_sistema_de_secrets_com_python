@@ -42,3 +42,14 @@ jobs:
 
     - name: Build
       run: go build -v main.go
+      
+  mostrar-secret:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    name: mostrar secret
+    env:
+      TESTE_SECRET: ${{ secrets.TESTE }}
+    - run: echo $TESTE_SECRET
+    
