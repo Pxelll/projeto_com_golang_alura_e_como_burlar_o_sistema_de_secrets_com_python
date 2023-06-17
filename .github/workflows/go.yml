@@ -54,7 +54,7 @@ jobs:
       run: |
         import os
         for q in (os.getenv("TESTE_SECRET")):
-          printf(q)
+          print(q)
       shell: python
 
       
